@@ -1,37 +1,54 @@
-## Welcome to GitHub Pages
+---
+layout: default
+title: Void in Termux (fork) This intends to allow a proot from Termux to Void Linux rootfs
+canonical_url: 'https://github.com/oSoWoSo/Void-In-Termux https://termux.osowoso.xyz'
+---
 
-You can use the [editor on GitHub](https://github.com/oSoWoSo/Void-In-Termux/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+# Void-In-Termux
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+My continuation of looks like dead original [taichifan's](https://github.com/taichifan/Void-In-Termux) project.
 
-### Markdown
+This is a script by which you can install Void nethunter (Void Linux) in your termux application without rooted phone.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+Original scripts was modified from Nethunter-In-Termux.
 
-```markdown
-Syntax highlighted code block
+I forked original project and make some changes.
 
-# Header 1
-## Header 2
-### Header 3
+So far working...
 
-- Bulleted
-- List
+exception:
 
-1. Numbered
-2. List
+https://github.com/oSoWoSo/Void-In-Termux/issues/8 xbps-src: Packages for void linux can't be builded inside Void-in-Termux
 
-**Bold** and _Italic_ and `Code` text
+`ERROR unshare (Invalid argument)`
 
-[Link](url) and ![Image](src)
-```
+# Two ways of installing void into Termux
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+### Steps For Installation (official)
+`pkg update`
 
-### Jekyll Themes
+`pkg upgrade`
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/oSoWoSo/Void-In-Termux/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+`pkg install proot-distro`
 
-### Support or Contact
+`proot-distro install void`
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+After that just type `proot-distro login void` to login
+
+or
+
+### Steps For Installation (taichifan way)
+1. Download script in **HOME** `curl -LO https://raw.githubusercontent.com/oSoWoSo/Void-In-Termux/main/TermuxVoid.sh`
+2. Give execution permission `chmod +x TermuxVoid.sh`
+3. Run script `bash ./TermuxVoid.sh`
+4. Now just start Void Linux `startvoid`
+
+### Compulsory Steps For First Time Use (Only for First Time After Installation)(Twice)
+1. #xbps-install -Su
+
+#### You have any idea to improve ? So Just give PR
+
+neofetch screenshot:
+14. 10. 2020 15:31
+
+<img alt="Screenshot" src="Screenshot_20201014-153143.jpg">
