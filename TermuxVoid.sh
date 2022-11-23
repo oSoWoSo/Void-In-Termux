@@ -6,7 +6,7 @@
 
 # colors
 
-build_date="$(wget -q -O- "https://mirror.fit.cvut.cz/voidlinux/live/current/sha256sum.txt" | awk 'NR == 1' |cut -d'.' -f1| cut -d'-' -f4)"
+build_date="$(wget -q -O- "https://repo-de.voidlinux.org/live/current/sha256sum.txt" | awk 'NR == 1' |cut -d'.' -f1| cut -d'-' -f4)"
 if [ -z "$2" ]
 then
 	libc=""
@@ -99,7 +99,7 @@ checkdeps() {
 # URLs of all possibls architectures
 
 seturl() {
-	URL="https://mirror.fit.cvut.cz/voidlinux/live/current/${rootfs}"
+	URL="https://repo-de.voidlinux.org/live/current/${rootfs}"
 }
 
 # Utility function to get tar file
@@ -116,7 +116,7 @@ gettarfile() {
 
 getsha() {
 	printf "\n${blue} [*] Getting SHA ... $reset\n\n"
-	axel ${EXTRAARGS} --alternate "https://mirror.fit.cvut.cz/voidlinux/live/current/sha256sum.txt"
+	axel ${EXTRAARGS} --alternate "https://repo-de.voidlinux.org/live/current/sha256sum.txt"
 }
 
 # Utility function to check integrity
@@ -208,7 +208,7 @@ resolvconf
 finalwork() {
 	[ -e $HOME/finaltouchup.sh ] && rm $HOME/finaltouchup.sh
 	echo
-	axel -a https://github.com/taichifan/Void-In-Termux/raw/master/finaltouchup.sh
+	axel -a https://github.com/oSoWoSo/Void-In-Termux/raw/master/finaltouchup.sh
 	DESTINATION=$DESTINATION SETARCH=$SETARCH bash $HOME/finaltouchup.sh
 } 
 #finalwork
