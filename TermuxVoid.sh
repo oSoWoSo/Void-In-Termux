@@ -6,7 +6,7 @@
 
 # colors
 
-build_date="$(wget -q -O- "https://repo-de.voidlinux.org/live/current/sha256sum.txt" | awk 'NR == 1' |cut -d'.' -f1| cut -d'-' -f4)"
+build_date="$(wget -q -O- "https://repo-fastly.voidlinux.org/live/current/sha256sum.txt" | awk 'NR == 1' |cut -d'.' -f1| cut -d'-' -f4)"
 if [ -z "$2" ]
 then
 	libc=""
@@ -99,7 +99,7 @@ checkdeps() {
 # URLs of all possibls architectures
 
 seturl() {
-	URL="https://repo-de.voidlinux.org/live/current/${rootfs}"
+	URL="https://repo-fastly.voidlinux.org/live/current/${rootfs}"
 }
 
 # Utility function to get tar file
@@ -116,7 +116,7 @@ gettarfile() {
 
 getsha() {
 	printf "\n${blue} [*] Getting SHA ... $reset\n\n"
-	axel ${EXTRAARGS} --alternate "https://repo-de.voidlinux.org/live/current/sha256sum.txt"
+	axel ${EXTRAARGS} --alternate "https://repo-fastly.voidlinux.org/live/current/sha256sum.txt"
 }
 
 # Utility function to check integrity
