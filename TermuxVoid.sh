@@ -6,7 +6,7 @@
 
 # colors
 
-build_date="$1"
+build_date="$(wget -q -O- "https://repo-de.voidlinux.org/live/current/sha256sum.txt" | awk 'NR == 1' |cut -d'.' -f1| cut -d'-' -f4)"
 if [ -z "$2" ]
 then
 	libc=""
@@ -99,7 +99,7 @@ checkdeps() {
 # URLs of all possibls architectures
 
 seturl() {
-	URL="https://a-hel-fi.m.voidlinux.org/live/current/${rootfs}"
+	URL="https://repo-de.voidlinux.org/live/current/${rootfs}"
 }
 
 # Utility function to get tar file
@@ -116,7 +116,7 @@ gettarfile() {
 
 getsha() {
 	printf "\n${blue} [*] Getting SHA ... $reset\n\n"
-	axel ${EXTRAARGS} --alternate "https://a-hel-fi.m.voidlinux.org/live/current/sha256sums.txt"
+	axel ${EXTRAARGS} --alternate "https://repo-de.voidlinux.org/live/current/sha256sum.txt"
 }
 
 # Utility function to check integrity
@@ -125,9 +125,9 @@ checkintegrity() {
 	printf "\n${blue} [*] Checking integrity of file...\n"
 	echo " [*] The script will immediately terminate in case of integrity failure"
 	printf ' '
-	grep ${rootfs} sha256sums.txt | sha256sum -c || {
+	grep ${rootfs} sha256sum.txt | sha256sum -c || {
 		printf "$red Sorry :( to say your downloaded linux file ${rootfs} was corrupted or half downloaded, but don't worry, just rerun my script\n${reset}"
-		exit 1
+	exit 1
 	}
 }
 
@@ -208,7 +208,7 @@ resolvconf
 finalwork() {
 	[ -e $HOME/finaltouchup.sh ] && rm $HOME/finaltouchup.sh
 	echo
-	axel -a https://github.com/taichifan/Void-In-Termux/raw/master/finaltouchup.sh
+	axel -a https://github.com/oSoWoSo/Void-In-Termux/raw/main/finaltouchup.sh
 	DESTINATION=$DESTINATION SETARCH=$SETARCH bash $HOME/finaltouchup.sh
 } 
 #finalwork
@@ -217,7 +217,8 @@ printline
 printf "\n${yellow} Now you can enjoy Void Linux in your Termux :)\n Don't forget to like my hard work for termux and many other things\n"
 printline
 printline
-printf "\n${blue} [∆] My official email:${yellow}		vingjroak@gmail.com\n"
+printf "\n${blue} [∆] My email:${yellow}		zenobit@osowoso.xyz\n"
+printf "\n${blue} [∆] Original author official email:${yellow}		vingjroak@gmail.com\n"
 printf "\n${blue} [∆] Official email for Kali Nethunter author which is where I took the script from.:${yellow}		lkpandey950@gmail.com\n"
 printf "$blue [∆] His website:${yellow}		https://hax4us.com\n"
 printf "$blue [∆] His YouTube channel:${yellow}	https://youtube.com/hax4us\n"
