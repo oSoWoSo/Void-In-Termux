@@ -1,6 +1,6 @@
 # Void-In-Termux
 
-My continuation of looks like dead original project!
+My continuation of looks like dead original [taichifan's](https://github.com/taichifan/Void-In-Termux) project!
 
 This is a script by which you can install Void nethunter (Void Linux) in your termux application without rooted phone.
 Original scripts was modified from Nethunter-In-Termux.
