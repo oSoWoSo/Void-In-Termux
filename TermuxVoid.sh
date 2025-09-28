@@ -7,14 +7,14 @@
 # colors
 
 build_date="$(wget -q -O- "https://repo-fastly.voidlinux.org/live/current/sha256sum.txt" | awk 'NR == 1' |cut -d'.' -f1| cut -d'-' -f4)"
-if [ -z "${2}" ]; then
+if [ -z "${1}" ]; then
 	libc=""
 else
-	if [ "${2}" != "musl" ]; then
+	if [ "${1}" != "musl" ]; then
 		echo "Error second argument must be musl... Exiting"
 		exit 1
 	else
-	    libc="${2}-"
+	    libc="${1}-"
 	fi
 fi
 red='\033[1;31m'
