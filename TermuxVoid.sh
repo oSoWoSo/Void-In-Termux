@@ -7,16 +7,15 @@
 # colors
 
 build_date="$(wget -q -O- "https://repo-fastly.voidlinux.org/live/current/sha256sum.txt" | awk 'NR == 1' |cut -d'.' -f1| cut -d'-' -f4)"
-if [ -z "$2" ]
-then
+if [ -z "${2}" ]; then
 	libc=""
 else
-	if [ "$2" != "musl" ]
-	then
-		echo Error second argument must be musl. Exiting.
+	if [ "${2}" != "musl" ]; then
+		echo "Error second argument must be musl... Exiting"
 		exit 1
+	else
+	    libc="${2}-"
 	fi
-	libc="$2-"
 fi
 red='\033[1;31m'
 yellow='\033[1;33m'
@@ -217,14 +216,14 @@ printline
 printf "\n${yellow} Now you can enjoy Void Linux in your Termux :)\n Don't forget to like my hard work for termux and many other things\n"
 printline
 printline
-printf "\n${blue} [∆] My email:${yellow}		zenobit@disroot.org\n"
-printf "\n${blue} [∆] Original author official email:${yellow}		vingjroak@gmail.com\n"
-printf "\n${blue} [∆] Official email for Kali Nethunter author which is where I took the script from.:${yellow}		lkpandey950@gmail.com\n"
-printf "$blue [∆] His website:${yellow}		https://hax4us.com\n"
-printf "$blue [∆] His YouTube channel:${yellow}	https://youtube.com/hax4us\n"
+printf "\n${blue} [∆] ${reset}My email:${yellow}		zenobit@disroot.org\n"
+printf "\n${blue} [∆] ${reset}Original author official email:${yellow}		vingjroak@gmail.com\n"
+printf "\n${blue} [∆] ${reset}Official email for Kali Nethunter author which is where I took the script from.:${yellow}		lkpandey950@gmail.com\n"
+printf "$blue [∆] ${reset}His website:${yellow}		https://hax4us.com\n"
+printf "$blue [∆] ${reset}His YouTube channel:${yellow}	https://youtube.com/hax4us\n"
 printline
-printf "$blue [∆] For start freshly installed Void run: startvoid"
-printf "$yellow [∆] You should update the system using xbps-install -Su the first time."
-printf "$blue [∆] Maybe before updating, you have to update xbps first with command: 'xbps-install -u xbps' but you will see mention"
+printf "$blue [∆] ${reset}For start freshly installed Void run: startvoid"
+printf "$yellow [∆] ${reset}You should update the system using xbps-install -Su the first time."
+printf "$blue [∆] ${reset}Maybe before updating, you have to update xbps first with command: 'xbps-install -u xbps' but you will see mention${blue}"
 printline
 printf "$reset"
