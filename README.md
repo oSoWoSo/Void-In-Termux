@@ -34,7 +34,7 @@ or
 ### Steps For Installation (taichifan way)
 1. Download script in **HOME** `curl -LO https://raw.githubusercontent.com/oSoWoSo/Void-In-Termux/main/TermuxVoid.sh`
 2. Give execution permission `chmod +x TermuxVoid.sh`
-3. Run script `bash ./TermuxVoid.sh`
+3. Run script `bash ./TermuxVoid.sh` or `./TermuxVoid.sh musl` if you want musl instead of glibc.
 4. Now just start Void Linux `startvoid`
 
 ### Compulsory Steps For First Time Use (Only for First Time After Installation)(Twice)
