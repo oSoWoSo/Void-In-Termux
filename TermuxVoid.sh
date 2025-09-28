@@ -4,19 +4,18 @@
 # https://hax4us.com
 ################################################################################
 
-# colors
+case "$1" in
+    "") libc="";;
+    "musl") libc="musl-";;
+    *) 
+        echo "Error: Argument must be musl... Exiting"
+        exit 1
+        ;;
+esac
 
 build_date="$(wget -q -O- "https://repo-fastly.voidlinux.org/live/current/sha256sum.txt" | awk 'NR == 1' |cut -d'.' -f1| cut -d'-' -f4)"
-if [ -z "${1}" ]; then
-	libc=""
-else
-	if [ "${1}" != "musl" ]; then
-		echo "Error second argument must be musl... Exiting"
-		exit 1
-	else
-	    libc="${1}-"
-	fi
-fi
+
+# colors
 red='\033[1;31m'
 yellow='\033[1;33m'
 blue='\033[1;34m'
