@@ -51,4 +51,4 @@ or
 neofetch screenshot:
 14. 10. 2020 15:31
 
-<img alt="screenshot" src="https://github.com/oSoWoSo/Void-In-Termux/blob/92f6ce57ccb23aa1cd8b0d4f40efa10c1d5eb68c/Screenshot_20201014-153143.jpg">
+<img alt="screenshot" src="https://raw.githubusercontent.com/oSoWoSo/Void-In-Termux/92f6ce57ccb23aa1cd8b0d4f40efa10c1d5eb68c/Screenshot_20201014-153143.jpg">
