@@ -221,8 +221,8 @@ printf "\n${blue} [∆] ${reset}Official email for Kali Nethunter author which i
 printf "$blue [∆] ${reset}His website:${yellow}		https://hax4us.com\n"
 printf "$blue [∆] ${reset}His YouTube channel:${yellow}	https://youtube.com/hax4us\n"
 printline
-printf "$blue [∆] ${reset}For start freshly installed Void run: startvoid"
-printf "$yellow [∆] ${reset}You should update the system using xbps-install -Su the first time."
-printf "$blue [∆] ${reset}Maybe before updating, you have to update xbps first with command: 'xbps-install -u xbps' but you will see mention${blue}"
+printf "$blue [∆] ${reset}For start freshly installed Void run: startvoid\n"
+printf "$yellow [∆] ${reset}You should update the system using xbps-install -Su the first time.\n"
+printf "$blue [∆] ${reset}Maybe before updating, you have to update xbps first with command: 'xbps-install -u xbps' but you will see mention${blue}\n"
 printline
 printf "$reset"
